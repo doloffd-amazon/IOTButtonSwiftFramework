@@ -1,10 +1,11 @@
 import PackageDescription
 
 var package = Package(
-    name: "AlexaSkill",
+    name: "SwiftLambdaHandler",
     targets: [
-        Target(name: "AlexaSkill"),
-        Target(name: "Lambda", dependencies: ["AlexaSkill"])
+        Target(name: "IOTButton"),
+        Target(name: "Lambda", dependencies: ["IOTButton"]),
+        Target(name: "AlexaSkill")
     ],
     dependencies: [
         .Package(url: "https://github.com/choefele/AlexaSkillsKit", majorVersion: 0),

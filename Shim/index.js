@@ -16,7 +16,9 @@ exports.handler = (event, context, callback) => {
             // The executable's raw stdout is the Lambda output
             var stdout = childObject.stdout.toString('utf8');
             var stderr = childObject.stderr.toString('utf8');
-            var response = JSON.parse(stdout);
+            console.log(stdout);
+            console.warn(stderr);
+            var response = { stdout: stdout, stderr: stderr };
             callback(null, response);
         } catch(e) {
             e.message += ": " + stderr
